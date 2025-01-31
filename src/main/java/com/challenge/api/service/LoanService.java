@@ -18,7 +18,6 @@ public class LoanService {
         this.strategies = strategies;
     }
 
-
     public LoanResponse getAvailableLoans(CustomerRequest customerRequest) {
         List<LoanInfo> loans = strategies.stream()
                 .map(strategy -> strategy.validate(customerRequest))
